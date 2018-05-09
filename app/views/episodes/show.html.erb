@@ -1,0 +1,32 @@
+<% provide(:title, @episode.title) %>
+
+<div id="hero-image-single" style =" background-image: url(<%= asset_path @episode.hero_image %>);">
+		<h1 id="hero-title"><%= @episode.title %></h1>
+	</div>
+
+
+	<div class="content-padding clearfix">
+
+		<div class="poster-wrapper">
+  		<%= image_tag @episode.poster, class: "img-responsive" %>
+  	</div>
+
+  	<div class="description-wrapper">
+  		
+  		<div class="description">
+  			<h2 class="movie-header">Description</h2>
+  			<p><%= @episode.description %></p>
+  		</div>
+
+  		<div class="main-characters">
+  			<h2 class="movie-header">Main Characters</h2>
+  			<ul>
+  			<% @episode.characters.each do |c| %>
+  				<li><%= c.name %></li>
+  			<% end %>
+  			</ul>
+  		</div>
+
+  	</div>
+
+	</div>

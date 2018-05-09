@@ -1,0 +1,24 @@
+<% provide(:title, "") %>
+	<div id="hero-image">
+		<h1 id="hero-title">Star Wars Movies App</h1>
+	</div>
+
+
+	<div id="posters-wrapper" class="content-padding clearfix">
+		<% @episodes.each do |episode| %>
+		<div class="poster">	  		
+
+			 <%= link_to episode do %>
+			  	 <%= image_tag episode.poster, class: "img-responsive" %>
+			  	
+
+			  	<div class="poster-info-overlay">
+			  		<h3><%= episode.title %></h3>
+			  		<h4><%= link_to "View More", episode %> <i class="fa fa-arrow-right"></i></h4>
+			  	</div>
+		  	<% end %>
+
+		</div>
+		<% end %>
+
+	</div>
